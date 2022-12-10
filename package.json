@@ -1,0 +1,39 @@
+{
+  "name": "cadence-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:blog": "vuepress build src/blog",
+    "build:site": "vuepress build src",
+    "build": "npm run build:blog && npm run build:site && npm run copy:blog",
+    "copy:blog": "cp -a dist-blog/. dist",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "start:blog": "vuepress dev src/blog",
+    "start": "vuepress dev src",
+    "start:local": "http-server ./dist",
+    "test": "npm run cypress:run"
+  },
+  "engines": {
+    "node": "v16.13.1",
+    "npm": "8.1.2"
+  },
+  "dependencies": {
+    "@vuepress/plugin-back-to-top": "^1.4.1",
+    "@vuepress/plugin-search": "^1.6.0",
+    "@vuepress/theme-blog": "^2.3.3",
+    "vuepress": "^1.4.1",
+    "vuepress-plugin-clean-urls": "^1.1.1",
+    "vuepress-plugin-code-copy": "^1.0.6",
+    "vuepress-plugin-code-switcher": "^1.0.3",
+    "vuepress-plugin-fulltext-search": "^2.0.6",
+    "vuepress-plugin-glossary": "^1.0.2",
+    "vuepress-plugin-reading-progress": "^1.0.9",
+    "vuepress-plugin-redirect": "^1.2.5"
+  },
+  "devDependencies": {
+    "cypress": "^6.1.0",
+    "http-server": "^13.0.2"
+  }
+}
